@@ -43,7 +43,7 @@ export default defineComponent({
         console.error(error);
       }
     } else {
-      next(); // Hier weiterleiten, falls routeParamUrl nicht definiert ist
+      next();
     }
   }
 });

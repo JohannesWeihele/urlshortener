@@ -38,7 +38,7 @@ export default {
   data(){
     return {
       url_input: '',
-      url_output: '',
+      url_output: 'https://shortestlink.netlify.app/',
     }
   },
   methods:{
@@ -52,7 +52,7 @@ export default {
         encoded_url = this.url_input;
       }
 
-      this.url_output = await url_service.getEncodedURL(encoded_url);
+      this.url_output += await url_service.getEncodedURL(encoded_url);
       console.log(this.url_output);
     }
   }

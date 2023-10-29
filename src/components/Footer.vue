@@ -1,5 +1,8 @@
 <template>
   <div class="footer-container">
+    <div class="footer-wrapper">
+      <p>© 2023 ShortLink. All rights reserved</p>
+    </div>
   </div>
 </template>
 
@@ -17,14 +20,21 @@ export default defineComponent({
 <style scoped>
 
 .footer-container{
-  position: absolute;
-  bottom: 0;
-  color: lightgrey;
+  position: relative;
   width: 100%;
-  height: 120px;
-  border-top: 1px solid #eaeaea;
-  background-image: url("../assets/img/background/footer-img.png");
-  background-size: cover;
+  height: 100%;
+}
+
+.footer-wrapper{
+  width: 100%;
+  height: 200px;
+  background-color: rgba(15, 15, 15, 0.8);
+  border-top: 1px solid #7c7c7c;
+}
+
+.footer-wrapper p{
+  margin-top: 90px;
+  color: white;
 }
 
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div class="content-container">
     <Header/>
+    <Particles/>
     <URLShortener/>
     <Footer/>
   </div>
@@ -13,6 +14,7 @@ import URLShortener from './components/URLShortener.vue';
 import Footer from './components/Footer.vue';
 
 import {URLService} from "@/services/url.service";
+import Particles from "@/components/Particles.vue";
 
 let url_service = new URLService();
 
@@ -21,7 +23,8 @@ export default defineComponent({
   components: {
     Header,
     Footer,
-    URLShortener
+    URLShortener,
+    Particles
   },
   data(){
     return{

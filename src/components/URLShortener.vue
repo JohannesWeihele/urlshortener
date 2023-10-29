@@ -1,29 +1,31 @@
 <template>
   <div class="shortener-container">
-    <img class="logo" src="../assets/img/logo/urlshortener_logo.png" alt="shortener_logo"/>
-    <form @submit.prevent="generate_url()" class="forms-container">
-      <div>
-        <input class="long-url-input" type="text" required="required" name="url_input" v-model="url_input" placeholder="Enter long URL"/>
-      </div>
-      <div>
-        <input class="generate-button" type="submit" value="Generate"/>
-      </div>
-      <div>
-        <div class="generate-output">
-          <div>
-            <img class="generate-arrow" src="../assets/img/arrow/generate_arrow.png"/>
-          </div>
-          <div class="output-wrapper">
+    <div class="shortener-wrapper">
+      <img class="logo" src="../assets/img/logo/urlshortener_logo.png" alt="shortener_logo"/>
+      <form @submit.prevent="generate_url()" class="forms-container">
+        <div>
+          <input class="long-url-input" type="text" required="required" name="url_input" v-model="url_input" placeholder="Enter long URL"/>
+        </div>
+        <div>
+          <input class="generate-button" type="submit" value="Generate"/>
+        </div>
+        <div>
+          <div class="generate-output">
             <div>
-              <label for="short-url-output">Shortener-URL:</label>
+              <img class="generate-arrow" src="../assets/img/arrow/generate_arrow.png"/>
             </div>
-            <div>
-              <input class="short-url-output" id="short-url-output" v-model="url_output" type="text" placeholder="Output"/>
+            <div class="output-wrapper">
+              <div>
+                <label for="short-url-output">Shortener-URL:</label>
+              </div>
+              <div>
+                <input class="short-url-output" id="short-url-output" v-model="url_output" type="text" placeholder="Output"/>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -62,8 +64,25 @@ export default {
 <style scoped>
 
 .shortener-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-top: 50px;
+  height: 40vw;
+  max-height: 1050px;
+  min-height: 1050px;
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+
+.shortener-wrapper{
+  background-color: rgba(50, 50, 50, 0.6);
+  border-radius: 20px;
+  width: 70%;
+  max-width: 1500px;
+  padding-bottom: 50px;
+  margin-top: -70px;
 }
 
 .logo{
@@ -78,8 +97,8 @@ export default {
 }
 
 .long-url-input, .short-url-output{
-  width: 20vw;
-  height: 40px;
+  width: 25vw;
+  height: 50px;
   min-width: 150px;
   border-radius: 10px;
   border: 1px solid lightgrey;
@@ -137,6 +156,25 @@ label {
   0% {translate: 0px 0px}
   50% { translate: 0px 20px}
   100% { translate: 0px 0px}
+}
+
+@media (max-width: 800px){
+
+  .shortener-wrapper{
+    width: 100%;
+  }
+
+  .long-url-input, .short-url-output{
+    width: 80%;
+  }
+
+  .logo{
+    width: 80%;
+    min-width: 300px;
+    margin-bottom: -100px;
+    margin-left: -20px;
+  }
+
 }
 
 </style>

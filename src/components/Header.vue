@@ -1,6 +1,6 @@
 <template>
   <div class="header-container">
-
+    <img src="../assets/img/logo/shortlink_logo.png"/>
   </div>
 </template>
 
@@ -18,15 +18,25 @@ export default defineComponent({
 <style scoped>
 
 .header-container{
-  position: absolute;
-  top: 0;
+  position: relative;
+  text-align: left;
   width: 100%;
-  height: 120px;
-  border-bottom: 1px solid #eaeaea;
+  height: 100px;
+  background-color: white;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.header-text{
-  color: lightgrey;
+.header-container img{
+  width: 200px;
+  height: auto;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 800px){
+  .header-container{
+    text-align: center;
+  }
 }
 
 </style>

@@ -40,21 +40,13 @@ export default {
   data(){
     return {
       url_input: '',
-      url_output: 'https://shortestlink.netlify.app/',
+      url_output: 'http://localhost:8080/',
     }
   },
   methods:{
     async generate_url(){
 
-      let encoded_url = '';
-
-      if(this.url_input.includes('https://')){
-        encoded_url = this.url_input.substring(8);
-      } else {
-        encoded_url = this.url_input;
-      }
-
-      this.url_output += await url_service.getEncodedURL(encoded_url);
+      this.url_output += await url_service.getEncodedURL(this.url_input);
       console.log(this.url_output);
     }
   }

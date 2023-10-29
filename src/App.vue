@@ -33,15 +33,12 @@ export default defineComponent({
   },
   async beforeRouteEnter(to, from, next) {
     const routeParamUrl = to.params.url as string;
-    let decoded_url = 'https://';
-    console.log(routeParamUrl);
 
     if (routeParamUrl != undefined) {
       try {
         const url = await url_service.getDecodedURL(routeParamUrl)
         console.log(url);
-        decoded_url += url;
-        window.location.href = decoded_url;
+        window.location.href = url;
       } catch (error) {
         console.error(error);
       }

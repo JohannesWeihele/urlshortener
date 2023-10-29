@@ -21,6 +21,8 @@ export class URLService {
 
       const url = encodeURIComponent(encode_url);
 
+      console.log(url);
+
     const response = await fetch(`http://localhost:4200/encode?url=${url}` , {
       method: 'POST',
     });
